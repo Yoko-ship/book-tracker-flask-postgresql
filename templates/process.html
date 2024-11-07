@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/site.css') }}">
+    <script src="{{url_for ('static',filename='js/hello.js')}}" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="welcome">Добро пожаловать в библиотеку</p>
+        </div>
+        <ul>
+            <li>
+                <button class="head-btn main-btn">Главная</button>
+            </li>
+            <li>
+                <button class="head-btn books-btn">Книги</button>
+            </li>
+
+            <li>
+                <button class="head-btn add-btn">Добавить</button>
+            </li>
+        </ul>
+    </header>
+
+    <p class="welcome" style="color: green;">Вы успешно добавили книгу в свой список,<br/> Пожалуста перейдите в нужный раздел</p>
+</body>
+</html>

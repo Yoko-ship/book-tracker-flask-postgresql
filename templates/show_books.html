@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/site.css') }}">
+    <script src="{{url_for ('static',filename='/js/hello.js')}}" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="welcome">Добро пожаловать в библиотеку</p>
+        </div>
+        <ul>
+            <li>
+                <button class="head-btn main-btn">Главная</button>
+            </li>
+            <li>
+                <button class="head-btn books-btn">Книги</button>
+            </li>
+
+            <li>
+                <button class="head-btn add-btn">Добавить</button>
+            </li>
+        </ul>
+    </header>
+    <div>
+        <p class="welcome">Здесь отображается ваша коллекция из книг</p>
+    </div>
+
+    <div class="grids">
+        {% if name_info %}
+            {% for name in name_info %}
+                <div class="grid" id="div-{{ name[0] }}" >
+                    <p>Названия: {{name[1]}}</p>
+                    <span>Автор: {{name[2]}}</span>
+                    <p>Жанр: {{name[3]}}</p>
+                    <span>Статус: {{name[4]}}</span>
+                    <p>Оценка: {{name[5]}}</p>
+                    <button class="delete-btn">Удалить</button>
+                    <button class="edit">Редактировать</button>
+                </div>
+            {%endfor%}
+
+        {% else %}
+            <p class="welcome">Книги не найдены</p>
+
+        {% endif%}
+    </div>
+</body>
+</html>

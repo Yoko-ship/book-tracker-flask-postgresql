@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/site.css') }}">
+    <script src="{{url_for ('static',filename='/js/hello.js')}}" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="welcome">Добро пожаловать в библиотеку</p>
+        </div>
+        <ul>
+            <li>
+                <button class="head-btn main-btn">Главная</button>
+            </li>
+            <li>
+                <button class="head-btn books-btn">Книги</button>
+            </li>
+
+            <li>
+                <button class="head-btn add-btn">Добавить</button>
+            </li>
+        </ul>
+    </header>
+
+    <div>
+        <p class="welcome">Топ Книг</p>
+    </div>
+
+
+    <div class="grids">
+        {% if top_rank %}
+            {% for top in top_rank %}
+                <div class="grid">
+                    <p>Названия: {{top[1]}}</p>
+                    <span>Автор: {{top[2]}}</span>
+                    <p>Жанр: {{top[3]}}</p>
+                    <span>Статус: {{top[4]}}</span>
+                    <p>Оценка: {{top[5]}}</p>
+                </div>
+            {% endfor%}
+        {% else %}
+            <p class="welcome">Книг с рейтингом выше 6 не существует..</p>
+        {% endif %}
+    </div>
+</body>
+</html>

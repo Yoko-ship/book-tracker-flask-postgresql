@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/site.css') }}">
+    <script src="{{url_for ('static',filename='js/hello.js')}}" defer></script>
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/form.css') }}">
+</head>
+<body>
+    <header>
+        <div>
+            <p class="welcome">Добро пожаловать в библиотеку</p>
+        </div>
+        <ul>
+            <li>
+                <button class="head-btn main-btn">Главная</button>
+            </li>
+            <li>
+                <button class="head-btn books-btn">Книги</button>
+            </li>
+
+            <li>
+                <button class="head-btn add-btn">Добавить</button>
+            </li>
+        </ul>
+    </header>
+
+
+
+    <form id="myForm" method="POST" action="/process">
+        <label for="name">Имя книги</label>
+        <input type="text" name="name" class="name-input">
+        
+        <label for="author">Автор</label>
+        <input type="text" class="author-input" name="author">
+        <label for="genre">Жанр</label>
+        <input type="text" class="genre-input" name="genre">
+        <label for="status">Статус</label>
+        <select class="select" name="status">
+            <option value="Прочитал">Прочитал</option>
+            <option value="Читаю">Читаю</option>
+            <option value="Планирую прочесть">Планирую прочесть</option>
+        </select>
+        <label for="mark">Оценка</label>
+        <input type="number" min="1" max="10" class="mark-input" name="mark">
+
+        <button type="submit" class="submit-btn">Подтвердить</button>
+    </form>
+
+    <div class="output"></div>
+</body>
+</html>
