@@ -23,7 +23,6 @@
             <li>
                 <button class="head-btn add-btn">Добавить</button>
             </li>
-
             <li>
                 <button class="head-btn login">Войти</button>
             </li>
@@ -32,28 +31,11 @@
             </li>
         </ul>
     </header>
-    <div>
-        <p class="welcome">Здесь отображается ваша коллекция из книг</p>
+
+    <div class="welcome">
+        <p style="color: green;">Вы успешно вышли с аккаунта</p>
     </div>
 
-    <div class="grids">
-        {% if name_info %}
-            {% for name in name_info %}
-                <div class="grid" id="div-{{ name[0] }}" >
-                    <p>Названия: {{name[1]}}</p>
-                    <span>Автор: {{name[2]}}</span>
-                    <p>Жанр: {{name[3]}}</p>
-                    <span>Статус: {{name[4]}}</span>
-                    <p>Оценка: {{name[5]}}</p>
-                    <button class="delete-btn">Удалить</button>
-                    <button class="edit">Редактировать</button>
-                </div>
-            {%endfor%}
 
-        {% else %}
-            <p class="welcome">Книги не найдены</p>
-
-        {% endif%}
-    </div>
 </body>
 </html>

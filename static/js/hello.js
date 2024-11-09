@@ -10,6 +10,13 @@ const submit_btn = document.querySelector(".submit-btn")
 const delete_btn = document.querySelectorAll(".delete-btn")
 var edit_btn = document.querySelectorAll(".edit")
 var grids = document.querySelectorAll(".grid")
+var register_btn = document.querySelector(".register-btn")
+var login_btn = document.querySelector(".login")
+var register_form = document.querySelector(".register-form")
+var input_name = document.querySelector(".input-name");
+var input_email = document.querySelector(".input-email")
+var input_password = document.querySelector(".input-password")
+var profile_btn = document.querySelector(".profile")
 
 
 
@@ -97,3 +104,11 @@ edit_btn.forEach(edit =>{
     })
 
 
+
+login_btn.addEventListener("click",()=>{
+    window.location.href = "/login"
+})
+
+profile_btn.addEventListener("click",()=>{
+    window.location.href = "/profile"
+})
