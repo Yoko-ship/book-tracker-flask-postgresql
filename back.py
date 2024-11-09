@@ -71,7 +71,6 @@ def show_site():
         cursor.execute("SELECT ID FROM users WHERE ПОЧТА = %s",(checked,))
         id_users = cursor.fetchone()
         users_texted_id = id_users[0]
-        print(users_texted_id)
         cursor.execute("SELECT * FROM book WHERE userId = %s AND ОЦЕНКА > 6",(users_texted_id,))
         top_rank = cursor.fetchall()
         return render_template("site.html",top_rank=top_rank)
@@ -124,7 +123,6 @@ def process_data():
         cursor.execute("SELECT ID FROM users WHERE ПОЧТА = %s",(userEmail,))
         user_id = cursor.fetchone()
         user_texted_id = user_id[0]
-        print(mark)
  
         cursor.execute("""
                 INSERT INTO book (ОЦЕНКА,АВТОР,ЖАНР,СТАТУС,ИМЯ,userId) VALUES(%s,%s,%s,%s,%s,%s)
